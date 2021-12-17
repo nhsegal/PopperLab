@@ -8,7 +8,7 @@ let energy;
 let launcherColor;
 
 function setup() {
-  createCanvas(600, 750);
+  createCanvas(600, 670);
 
   rectMode(CENTER);
   sliderm = createSlider(10, 100, 1, 0.1);
@@ -60,7 +60,7 @@ function draw() {
 
   if (running != true) {
     projectile.m = sliderm.value();
-    projectile.y = (4 * height) / 5;
+    projectile.y = (4.5 * height) / 5;
     projectile.v = -sqrt((2 * launcher.Usp) / projectile.m);
   }
 
@@ -73,7 +73,7 @@ class Projectile {
   constructor(m, v) {
     this.m = m;
     this.v = v;
-    this.y = (4 * height) / 5;
+    this.y = (4.5 * height) / 5;
   }
   move() {
     this.v += 1;
@@ -81,8 +81,8 @@ class Projectile {
   }
   display() {
     fill(0);
-    ellipse(width / 2, this.y, sqrt(this.m), sqrt(this.m));
-    rect(width / 2, this.y + 15, 4, 30);
+    ellipse(width / 2, this.y-15, sqrt(this.m), sqrt(this.m));
+    rect(width / 2, this.y, 4, 30);
   }
 }
 
@@ -141,23 +141,23 @@ class Launcher {
   display() {
     noStroke();
     fill(this.color);
-    rect(width / 2, (5 * height) / 6, 10, 40);
-    rect(width / 2, (5 * height) / 6 + 10, 20, 40);
+    rect(width / 2, (5.5 * height) / 6, 10, 40);
+    rect(width / 2, (5.5 * height) / 6 + 10, 20, 40);
     triangle(
       width / 2,
-      (5 * height) / 6 + 10,
+      (5.5 * height) / 6 + 10,
       width / 2,
-      (5 * height) / 6 + 20,
+      (5.5 * height) / 6 + 20,
       width / 2 + 40,
-      (5 * height) / 6 + 30
+      (5.5 * height) / 6 + 30
     );
     triangle(
       width / 2 + 40,
-      (5 * height) / 6 + 30,
+      (5.5 * height) / 6 + 30,
       width / 2,
-      (5 * height) / 6 + 10,
+      (5.5 * height) / 6 + 10,
       width / 2 + 40,
-      (5 * height) / 6 + 20
+      (5.5 * height) / 6 + 20
     );
   }
 }
